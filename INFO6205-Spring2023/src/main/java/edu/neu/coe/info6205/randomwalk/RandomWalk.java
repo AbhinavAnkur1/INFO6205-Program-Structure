@@ -30,8 +30,7 @@ public class RandomWalk {
      * @param m the number of steps the drunkard takes
      */
     private void randomWalk(int m) {
-        while (m > 0)
-        {
+        while (m > 0) {
             randomMove();
             m--;
         }
@@ -53,7 +52,7 @@ public class RandomWalk {
      * @return the (Euclidean) distance from the origin to the current position.
      */
     public double distance() {
-        return Math.sqrt((x*x) + (y*y));
+        return Math.sqrt((x * x) + (y * y));
     }
 
     /**
@@ -73,9 +72,12 @@ public class RandomWalk {
         return totalDistance / n;
     }
 
-    public static void main(String[] args) {
-        if (args.length == 0)
-            throw new RuntimeException("Syntax: RandomWalk steps [experiments]");
+    public static void main(String[] args) throws RuntimeException {
+        if (args.length == 0) {
+            System.out.println("Syntax: RandomWalk steps [experiments]");
+            return;
+        }
+
         int m = Integer.parseInt(args[0]);
         for (int i = 1; i <= 60; i++) {
             int n = 30;
